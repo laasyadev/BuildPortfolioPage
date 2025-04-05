@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Your Portfolio!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Investment Info</h2>
+        <form onsubmit="return submitForm(event)">
+
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" required>
+
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="risk">Risk Level:</label>
+            <select id="risk" required>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+
+            <label for="investment_amount">Investment Amount:</label>
+            <input type="number" id="investment" required>
+
+            <label for="investment_duration">Investment Duration(years):</label>
+            <input type="number" id="investment_duration" required>
+
+            <label for="net_income">Net Income (Dollars):</label>
+            <input type="number" id="net_income" required>
+
+            <label for="num_dependents">Number of Dependents:</label>
+            <input type="number" id="num_dependents" required>
+
+            <label for="Location_preference">Location Preference:</label>
+            <select id="Location_preference" required>
+                <option value="national">National</option>
+                <option value="international">International</option>
+            </select>
+
+            <button type="submit">Submit</button>
+
+        </form>
+        </div>
+
+        <script>
+    function submitForm(event) {
+
+        event.preventDefault();
+
+        document.body.innerHTML = `
+            <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: Arial, sans-serif; text-align: center;">
+                <h2>Portfolio Updated!</h2>
+            </div>
+        `;
+        
+ 
+        setTimeout(() => {
+            window.location.href = "your_new_page.html"; // Redirect to another page if necessary
+        }, 3000); // Redirects after 3 seconds (3000 milliseconds)
+    }
+</script>
+
+</body>
+
+</html>
